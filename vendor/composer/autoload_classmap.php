@@ -3763,6 +3763,7 @@ return array(
     'SebastianBergmann\\Type\\VoidType' => $vendorDir . '/sebastian/type/src/VoidType.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'SensorTypesTable' => $baseDir . '/database/seeds/SensorTypesTable.php',
+    'SensorTypesTableSeeder' => $baseDir . '/database/seeds/SensorTypesTableSeeder.php',
     'SensorsTableSeeder' => $baseDir . '/database/seeds/SensorsTableSeeder.php',
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
     'Symfony\\Component\\Console\\Application' => $vendorDir . '/symfony/console/Application.php',

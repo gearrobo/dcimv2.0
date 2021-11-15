@@ -4255,6 +4255,7 @@ class ComposerStaticInit1314da155f22a7db41bb975cbeb706e7
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SensorTypesTable' => __DIR__ . '/../..' . '/database/seeds/SensorTypesTable.php',
+        'SensorTypesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/SensorTypesTableSeeder.php',
         'SensorsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/SensorsTableSeeder.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',

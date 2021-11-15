@@ -2,9 +2,8 @@
 
 use App\SensorType;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class SensorTypesTable extends Seeder
+class SensorTypesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

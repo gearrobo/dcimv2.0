@@ -82,6 +82,8 @@
 </div>
 
 <script src="{{ mix('js/app.js') }}" defer></script>
+<script src="{{ asset('js/gauge.min.js') }}"></script>
+<script src="{{ asset('js/Chart.js') }}"></script>
 
 @yield('third_party_scripts')
 
