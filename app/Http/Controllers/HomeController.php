@@ -44,4 +44,12 @@ class HomeController extends Controller
     public function trend(){
         return view('page.trend');
     }
+    
+    public function alarm(){
+        return view('page.alarm');
+    }
+
+    public function data(){
+        return view('page.data');
+    }
 }

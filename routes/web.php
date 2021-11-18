@@ -22,4 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/detail/{id}','HomeController@detail')->name('detail');
 Route::get('/trend','HomeController@trend')->name('trend');
 Route::get('/setting', 'SettingController@index')->name('setting');
-
+Route::get('/alarm','HomeController@alarm')->name('alarm');
+Route::get('/data','HomeController@data')->name('data');

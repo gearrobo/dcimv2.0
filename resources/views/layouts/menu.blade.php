@@ -12,13 +12,13 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">
+    <a href="{{ route('alarm') }}" class="nav-link {{ request()->routeIs('alarm') ? 'active' : '' }}">
         <i class="nav-icon far fa-bell"></i>
         <p>Alarm</p>
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">
+    <a href="{{ route('data') }}" class="nav-link {{ request()->routeIs('data') ? 'active' : '' }}">
         <i class="nav-icon fas fa-database"></i>
         <p>Master Data</p>
     </a>

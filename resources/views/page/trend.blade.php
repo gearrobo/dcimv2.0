@@ -25,9 +25,19 @@
                 <div class="card">
                     <div class="card-header bg-info">
                         <h4 class="text-white"><i class="fas fa-industry"></i>&nbsp; Kelistrikan</strong> </h4>
-                    </div><br>
-                    <h3>Voltage</h3>
-                    <canvas id="linechart" width="100" height="20"></canvas>
+                    </div>
+                    <div class="card-body">
+                        <h4>Custom Select</h4>
+                        <div class="form-group">
+                            <select id="cohort" class="form-control">
+                                <option>Voltage</option>
+                                <option>Current</option>
+                                <option>Power</option>
+                            </select>
+                        </div>
+                        <h3>Voltage</h3>
+                        <canvas id="linechart" width="100" height="20"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
