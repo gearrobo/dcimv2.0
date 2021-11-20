@@ -87,7 +87,6 @@
     <!-- DataTables  & Plugins -->
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/autofill/2.3.7/js/dataTables.autoFill.min.js"></script>
-    <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
 
 
     @yield('third_party_scripts')

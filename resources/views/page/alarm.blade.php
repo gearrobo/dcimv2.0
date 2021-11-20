@@ -475,8 +475,8 @@
 
 @section('third_party_scripts')
 <script>
-    $(function() {
-        $("#example").DataTable();
-    });
+    $(document).ready( function () {
+    $('#example').DataTable();
+} );
 </script>
 @endsection
