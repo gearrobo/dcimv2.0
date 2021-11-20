@@ -1,5 +1,6 @@
 <?php
 
+use App\SensorLogs;
 use App\SensorType;
 use Illuminate\Database\Seeder;
 
@@ -17,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DeviceTableSeeder::class);
         $this->call(SensorsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(SensorLogsTableSeeder::class);
     }
 }
