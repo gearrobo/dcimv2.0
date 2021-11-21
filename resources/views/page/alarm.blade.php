@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Home</h1>
+                <h1 class="m-0">Alarm</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -24,12 +24,12 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header bg-info">
-                        <h4 class="text-white"><i class="fas fa-industry"></i>&nbsp; Kelistrikan</strong> </h4>
-                    </div><br>
+                        <h4 class="text-white"><i class="fas fa-industry"></i>&nbsp; Log Alarm</strong> </h4>
+                    </div>
                     <div class="card">
-                        <div class="card-header">
+                        <!-- <div class="card-header">
                             <h3 class="card-title">DataTable with default features</h3>
-                        </div>
+                        </div> -->
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example" class="table table-striped table-bordered" style="width:100%">
