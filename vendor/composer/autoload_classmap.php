@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\AlarmLogs' => $baseDir . '/app/AlarmLogs.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Device' => $baseDir . '/app/Device.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -27,6 +28,7 @@ return array(
     'App\\Http\\Middleware\\TrustHosts' => $baseDir . '/app/Http/Middleware/TrustHosts.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Ipaddress' => $baseDir . '/app/Ipaddress.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
@@ -1968,6 +1970,7 @@ return array(
     'InfyOm\\AdminLTEPreset\\AdminLTEPreset' => $vendorDir . '/infyomlabs/laravel-ui-adminlte/src/AdminLTEPreset.php',
     'InfyOm\\AdminLTEPreset\\AdminLTEPresetServiceProvider' => $vendorDir . '/infyomlabs/laravel-ui-adminlte/src/AdminLTEPresetServiceProvider.php',
     'InfyOm\\GeneratorHelpers\\LaravelUtils' => $vendorDir . '/infyomlabs/laravel-generator-helpers/src/LaravelUtils.php',
+    'IpaddressTableSeeder' => $baseDir . '/database/seeds/IpaddressTableSeeder.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
     'Laravel\\Tinker\\ClassAliasAutoloader' => $vendorDir . '/laravel/tinker/src/ClassAliasAutoloader.php',
     'Laravel\\Tinker\\Console\\TinkerCommand' => $vendorDir . '/laravel/tinker/src/Console/TinkerCommand.php',

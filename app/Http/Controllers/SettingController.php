@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Ipaddress;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -13,7 +14,8 @@ class SettingController extends Controller
      */
     public function index()
     {
-        return view('page.setting');
+        $data['ips'] = Ipaddress::all();
+        return view('page.setting', $data);
     }
 
     /**
@@ -43,9 +45,9 @@ class SettingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return back()->with('error','Maaf Fitur Belum Tersedia!');
     }
 
     /**
@@ -68,7 +70,13 @@ class SettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Ipaddress::where('id', $id)->update([
+            'ipv4' => $request->ipv4,
+            'netmask' => $request->netmask,
+            'gateway' => $request->gateway,
+            'dns' => $request->dns
+        ]);
+        return back()->with('success','IP Address Berhasil di Ubah!');
     }
 
     /**
