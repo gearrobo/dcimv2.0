@@ -10,8 +10,9 @@
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <!-- DataTables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 
     @yield('third_party_stylesheets')
 
@@ -79,12 +80,21 @@
         </footer>
     </div>
 
-    <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ asset('js/gauge.min.js') }}"></script>
     <script src="{{ asset('js/Chart.js') }}"></script>
-    <!-- DataTables -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <!-- jQuery -->
+    <script src="{{ asset('js/datatables/jquery.min.js') }}"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="{{ asset('js/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/buttons.colVis.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/vfs_fonts.js') }}"></script>
 
     @yield('third_party_scripts')
 
