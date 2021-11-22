@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AlarmLogsTableSeeder' => $baseDir . '/database/seeds/AlarmLogsTableSeeder.php',
     'App\\AlarmLogs' => $baseDir . '/app/AlarmLogs.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Device' => $baseDir . '/app/Device.php',

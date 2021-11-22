@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\AlarmLogs;
 use App\Device;
 use App\Sensor;
 use App\SensorLogs;
@@ -27,12 +28,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['devices'] = Device::where('type_id', 20)->get();
+        $data['temps'] = Sensor::where('sensor_type_id', 1)->get();
+        $data['hums'] = Sensor::where('sensor_type_id', 2)->get();
+        $data['lamps'] = Sensor::where('sensor_type_id', 12)->get();
         return view('page.home', $data);
     }
 
-    public function detail($id)
+    public function listrik()
     {
+        $id = 1;
         $data = [
             'device' => Device::find($id),
             'volt' => Sensor::where('device_id', $id)->where('sensor_type_id', 6)->first(),
@@ -40,27 +44,27 @@ class HomeController extends Controller
             'power' => Sensor::where('device_id', $id)->where('sensor_type_id', 8)->first(),
             'sensors' => Sensor::where('device_id', $id)->orderBy('sensor_type_id')->get()
         ];
-        return view('page.detail', $data);
+        return view('page.listrik', $data);
     }
 
     public function trend()
     {
         $data['devices'] = Device::all();
         $limit = 20;
-        $vlogtime = SensorLogs::select(DB::raw('TIME(created_at) as time'))->where('sensor_id', 1)->orderBy('id', 'ASC')->limit($limit)->pluck('time');
-        $vr = SensorLogs::select(DB::raw('L1 as vr'))->where('sensor_id', 1)->orderBy('id', 'ASC')->limit($limit)->pluck('vr');
-        $vs = SensorLogs::select(DB::raw('L2 as vs'))->where('sensor_id', 1)->orderBy('id', 'ASC')->limit($limit)->pluck('vs');
-        $vt = SensorLogs::select(DB::raw('L3 as vt'))->where('sensor_id', 1)->orderBy('id', 'ASC')->limit($limit)->pluck('vt');
+        $vlogtime = SensorLogs::select(DB::raw('TIME(created_at) as time'))->where('sensor_id', 7)->orderBy('id', 'ASC')->limit($limit)->pluck('time');
+        $vr = SensorLogs::select(DB::raw('L1 as vr'))->where('sensor_id', 7)->orderBy('id', 'ASC')->limit($limit)->pluck('vr');
+        $vs = SensorLogs::select(DB::raw('L2 as vs'))->where('sensor_id', 7)->orderBy('id', 'ASC')->limit($limit)->pluck('vs');
+        $vt = SensorLogs::select(DB::raw('L3 as vt'))->where('sensor_id', 7)->orderBy('id', 'ASC')->limit($limit)->pluck('vt');
 
-        $clogtime = SensorLogs::select(DB::raw('TIME(created_at) as time'))->where('sensor_id', 2)->orderBy('id', 'ASC')->limit($limit)->pluck('time');
-        $cr = SensorLogs::select(DB::raw('L1 as cr'))->where('sensor_id', 2)->orderBy('id', 'ASC')->limit($limit)->pluck('cr');
-        $cs = SensorLogs::select(DB::raw('L2 as cs'))->where('sensor_id', 2)->orderBy('id', 'ASC')->limit($limit)->pluck('cs');
-        $ct = SensorLogs::select(DB::raw('L3 as ct'))->where('sensor_id', 2)->orderBy('id', 'ASC')->limit($limit)->pluck('ct');
+        $clogtime = SensorLogs::select(DB::raw('TIME(created_at) as time'))->where('sensor_id', 8)->orderBy('id', 'ASC')->limit($limit)->pluck('time');
+        $cr = SensorLogs::select(DB::raw('L1 as cr'))->where('sensor_id', 8)->orderBy('id', 'ASC')->limit($limit)->pluck('cr');
+        $cs = SensorLogs::select(DB::raw('L2 as cs'))->where('sensor_id', 8)->orderBy('id', 'ASC')->limit($limit)->pluck('cs');
+        $ct = SensorLogs::select(DB::raw('L3 as ct'))->where('sensor_id', 8)->orderBy('id', 'ASC')->limit($limit)->pluck('ct');
 
-        $plogtime = SensorLogs::select(DB::raw('TIME(created_at) as time'))->where('sensor_id', 2)->orderBy('id', 'ASC')->limit($limit)->pluck('time');
-        $pr = SensorLogs::select(DB::raw('L1 as pr'))->where('sensor_id', 2)->orderBy('id', 'ASC')->limit($limit)->pluck('pr');
-        $ps = SensorLogs::select(DB::raw('L2 as ps'))->where('sensor_id', 2)->orderBy('id', 'ASC')->limit($limit)->pluck('ps');
-        $pt = SensorLogs::select(DB::raw('L3 as pt'))->where('sensor_id', 2)->orderBy('id', 'ASC')->limit($limit)->pluck('pt');
+        $plogtime = SensorLogs::select(DB::raw('TIME(created_at) as time'))->where('sensor_id', 9)->orderBy('id', 'ASC')->limit($limit)->pluck('time');
+        $pr = SensorLogs::select(DB::raw('L1 as pr'))->where('sensor_id', 9)->orderBy('id', 'ASC')->limit($limit)->pluck('pr');
+        $ps = SensorLogs::select(DB::raw('L2 as ps'))->where('sensor_id', 9)->orderBy('id', 'ASC')->limit($limit)->pluck('ps');
+        $pt = SensorLogs::select(DB::raw('L3 as pt'))->where('sensor_id', 9)->orderBy('id', 'ASC')->limit($limit)->pluck('pt');
 
         $data['vlogtime'] = json_encode($vlogtime);
         $data['vr'] = json_encode($vr);
@@ -81,11 +85,30 @@ class HomeController extends Controller
 
     public function alarm()
     {
-        return view('page.alarm');
+        $data['alarmlogs'] = AlarmLogs::all()->sortByDesc('id');
+        return view('page.alarm', $data);
     }
 
     public function data()
     {
         return view('page.data');
+    }
+
+    public function lamp(Request $request, $id)
+    {
+        $on = $request->onlamp;
+        if (isset($on)) {
+            Sensor::where('id', $id)->update([
+                'avg_sensor' => $on
+            ]);
+            return back();
+        }
+        $off = $request->offlamp;
+        if (isset($off)) {
+            Sensor::where('id', $id)->update([
+                'avg_sensor' => $off
+            ]);
+            return back();
+        }
     }
 }

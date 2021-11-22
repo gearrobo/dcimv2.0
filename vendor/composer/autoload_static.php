@@ -498,6 +498,7 @@ class ComposerStaticInit1314da155f22a7db41bb975cbeb706e7
     );
 
     public static $classMap = array (
+        'AlarmLogsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AlarmLogsTableSeeder.php',
         'App\\AlarmLogs' => __DIR__ . '/../..' . '/app/AlarmLogs.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Device' => __DIR__ . '/../..' . '/app/Device.php',

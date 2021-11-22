@@ -1,8 +1,14 @@
 <!-- need to remove -->
 <li class="nav-item">
-    <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home','detail') ? 'active' : '' }}">
+    <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
         <p>Home</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ route('listrik') }}" class="nav-link {{ request()->routeIs('listrik') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-bolt"></i>
+        <p>Panel Listrik</p>
     </a>
 </li>
 <!-- <li class="nav-item">
