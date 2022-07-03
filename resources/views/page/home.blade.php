@@ -25,7 +25,7 @@
                 <div class="raw">
                     <div class="card card-info">
                         <div class="card-header bg-info mb-3">
-                            <b class="text-white"><i class="fas fa-history"></i> Last Update &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; waktu </strong> </b>
+                            <b class="text-white"><i class="fas fa-history"></i> Last Update &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Waktu Terakhir online </strong> </b>
                         </div>
                         <div class="row">
                             @foreach ($temps as $temp )
