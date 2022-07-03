@@ -111,4 +111,9 @@ class HomeController extends Controller
             return back();
         }
     }
+
+    public function update(Request $request)
+    {
+        var_dump($request);
+    }
 }
